@@ -1,0 +1,11 @@
+C:\Users\oOOo\Documents\Môn học A+\Hệ quản trị cơ sở dữ liệu\QL_Trasua\QL_Trasua\bin\Debug\QL_Trasua.exe.config
+C:\Users\oOOo\Documents\Môn học A+\Hệ quản trị cơ sở dữ liệu\QL_Trasua\QL_Trasua\bin\Debug\QL_Trasua.exe
+C:\Users\oOOo\Documents\Môn học A+\Hệ quản trị cơ sở dữ liệu\QL_Trasua\QL_Trasua\bin\Debug\QL_Trasua.pdb
+C:\Users\oOOo\Documents\Môn học A+\Hệ quản trị cơ sở dữ liệu\QL_Trasua\QL_Trasua\obj\Debug\QL_Trasua.csprojAssemblyReference.cache
+C:\Users\oOOo\Documents\Môn học A+\Hệ quản trị cơ sở dữ liệu\QL_Trasua\QL_Trasua\obj\Debug\QL_Trasua.Form1.resources
+C:\Users\oOOo\Documents\Môn học A+\Hệ quản trị cơ sở dữ liệu\QL_Trasua\QL_Trasua\obj\Debug\QL_Trasua.form_quanly.resources
+C:\Users\oOOo\Documents\Môn học A+\Hệ quản trị cơ sở dữ liệu\QL_Trasua\QL_Trasua\obj\Debug\QL_Trasua.Properties.Resources.resources
+C:\Users\oOOo\Documents\Môn học A+\Hệ quản trị cơ sở dữ liệu\QL_Trasua\QL_Trasua\obj\Debug\QL_Trasua.csproj.GenerateResource.cache
+C:\Users\oOOo\Documents\Môn học A+\Hệ quản trị cơ sở dữ liệu\QL_Trasua\QL_Trasua\obj\Debug\QL_Trasua.csproj.CoreCompileInputs.cache
+C:\Users\oOOo\Documents\Môn học A+\Hệ quản trị cơ sở dữ liệu\QL_Trasua\QL_Trasua\obj\Debug\QL_Trasua.exe
+C:\Users\oOOo\Documents\Môn học A+\Hệ quản trị cơ sở dữ liệu\QL_Trasua\QL_Trasua\obj\Debug\QL_Trasua.pdb
