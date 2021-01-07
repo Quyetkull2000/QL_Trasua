@@ -50,6 +50,7 @@ namespace QuanLyQuanCafe
 
         private void btnLogin_Click_1(object sender, EventArgs e)
         {
+
             string userName = txbUserName.Text;
             string passWord = txbPassWord.Text;
             if (Login(userName, passWord))
@@ -64,6 +65,11 @@ namespace QuanLyQuanCafe
             {
                 MessageBox.Show("Sai tên tài khoản hoặc mật khẩu!");
             }
+        }
+
+        private void fLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QuanLyQuanCafe.DAO
+namespace QuanLyQuanTrasua.DAO
 {
     public class DataProvider
     {

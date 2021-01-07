@@ -73,6 +73,7 @@
             this.btnLogin.Text = "Đăng nhập";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click_1);
+            this.btnLogin.Enter += new System.EventHandler(this.btnLogin_Click_1);
             // 
             // panel3
             // 
@@ -137,6 +138,7 @@
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fLogin_FormClosing);
             this.Load += new System.EventHandler(this.fLogin_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fLogin_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

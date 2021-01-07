@@ -1,4 +1,5 @@
 ﻿//using QuanLyQuanCafe.DTO;
+using QuanLyQuanTrasua.DAO;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -23,8 +24,9 @@ namespace QuanLyQuanCafe.DAO
 
         public bool Login(string userName, string passWord)
         {
-            string query = "select * from Account where UserName= N'" + userName+ "' and PassWord= N'" + passWord+" ' ";
-            DataTable  result = DataProvider.Instance.ExecuteQuery(query);
+            //Đăng nhập sử dụng proc tránh hack
+            string query = "sp_Login  @Username , @Password";
+            DataTable  result = DataProvider.Instance.ExecuteQuery(query, new object[] { userName, passWord });
             return result.Rows.Count > 0;
 
 
