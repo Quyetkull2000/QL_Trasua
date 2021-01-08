@@ -217,3 +217,38 @@ Begin
 End
 
 SELECT ID, Name AS Tên FROM FoodCategory
+
+
+
+
+delete BillInfo
+delete Bill
+
+CREATE TRIGGER UTG_UpdateBillInfo
+On BillInfo for insert, update
+as
+begin
+	Declare @idBill int
+	Select @idBill = idBill from inserted
+	Declare @idTable int
+	Select @idTable = idTable from Bill where id = @idBill and status = 0
+
+	Update TableFood set status = N'Có người' where id = @idTable
+End
+go
+
+Create TRIGGER UTG_UpdateBill
+On Bill for update
+as
+begin
+	declare @idBill int
+	select @idBill = id from inserted
+	Declare @idTable int
+	Select @idTable = idTable from Bill where id = @idBill 
+
+	Declare @count int = 0
+	select @count = COUNT(*) from Bill where idTable = @idTable and status = 0
+	if (@count = 0)
+		update TableFood set status = N'Trống' where id = @idTable
+end 
+go

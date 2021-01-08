@@ -33,15 +33,20 @@ namespace QLTrasua.DAO
             return -1;
         }
 
-        public void CheckOut(int idBill, int idTable, int totalPrice)
+        public void CheckOut(int id)
         {
-            string qr = string.Format("" +
-                "UPDATE Bill " +
-                "SET dateCheckOut = GETDATE(), status = 1, totalPrice = {0} " +
-                "WHERE id = {1}", totalPrice, idBill);
-            string qr2 = "UPDATE TableFood SET status = N'Trống' WHERE id = " + idTable;
-            DataProvider.Instance.ExecuteNonQuery(qr);
-            DataProvider.Instance.ExecuteNonQuery(qr2);
+            String query = "Update Bill set status = 1 where id = " + id;
+            DataProvider.Instance.ExecuteNonQuery(query);
+
+
+
+            //string qr = string.Format("" +
+            //    "UPDATE Bill " +
+            //    "SET dateCheckOut = GETDATE(), status = 1, totalPrice = {0} " +
+            //    "WHERE id = {1}", totalPrice, idBill);
+            //string qr2 = "UPDATE TableFood SET status = N'Trống' WHERE id = " + idTable;
+            //DataProvider.Instance.ExecuteNonQuery(qr);
+            //DataProvider.Instance.ExecuteNonQuery(qr2);
 
         }
 
@@ -114,5 +119,10 @@ namespace QLTrasua.DAO
                 "WHERE DateCheckIn >= '" + checkIn.ToShortDateString() + " 00:00:01' AND DateCheckOut <= '" + checkOut.ToShortDateString() + " 23:59:59' AND status = 1";
             return DataProvider.Instance.ExecuteScalar(qr).ToString();
         }
+
+        //internal void CheckOut(int idBill)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

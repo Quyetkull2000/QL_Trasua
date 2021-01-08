@@ -221,20 +221,27 @@ namespace QLTrasua
         private void btnCheckOut_Click_1(object sender, EventArgs e)
         {
             Table table = lsvBill.Tag as Table;
-            if (table == null) return;
-            int idBill = idBill = BillDAO.Instance.GetUncheckBillIDByTableID(table.ID);
-            int totalPrice = 0;
-            try
-            {
-                totalPrice = Convert.ToInt32(txbTotalPrice.Text.Split(',')[0]);
-            }
-            catch (Exception) { }
+           // if (table == null) return;
+            int idBill = BillDAO.Instance.GetUncheckBillIDByTableID(table.ID);
+            //int totalPrice = 0;
+            //try
+            //{
+            //    totalPrice = Convert.ToInt32(txbTotalPrice.Text.Split(',')[0]);
+            //}
+            //catch (Exception) { }
 
             if (idBill != -1)
             {
-                fmCash fm = new fmCash(idBill, table.ID, totalPrice * 1000, table.Name, userName);
-                fm.ShowDialog();
-                LoadTable();
+                if (MessageBox.Show("Bạn có chắc thanh toán cho " + table.Name + "", "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+                {
+                    
+                    {
+                        BillDAO.Instance.CheckOut(idBill);
+                        ShowBill(table.ID);
+
+                        LoadTable();
+                    }
+                }
             }
         }
     }

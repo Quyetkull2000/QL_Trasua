@@ -102,27 +102,28 @@ namespace QLTrasua
 
         private void btnCheckOut_Click_1(object sender, EventArgs e)
         {
-            txbSubTotal.Focus();
-            int total = Convert.ToInt32(txbTotalPrice.Text);
-            int subTotal = Convert.ToInt32(txbSubTotal.Text);
-            int change = subTotal - total; //tiền thừa
+            //txbSubTotal.Focus();
+            //int total = Convert.ToInt32(txbTotalPrice.Text);
+            //int subTotal = Convert.ToInt32(txbSubTotal.Text);
+            //int change = subTotal - total; //tiền thừa
 
-            if (change < 0)
-            {
-                MessageBox.Show("Nhận tiền chưa đủ", "Thông báo");
-                return;
-            }
+            //if (change < 0)
+            //{
+            //    MessageBox.Show("Nhận tiền chưa đủ", "Thông báo");
+            //    return;
+            //}
 
-            if (MessageBox.Show("Bạn có chắc thanh toán cho " + tableName + "", "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
-            {
-                if (change >= 0)
-                {
-                    BillDAO.Instance.CheckOut(idBill, IdTable, TotalPrice);
-                    fmChangeMoney fm = new fmChangeMoney(idBill, change);
-                    fm.ShowDialog();
-                    this.Dispose();
-                }
-            }
+            //if (MessageBox.Show("Bạn có chắc thanh toán cho " + tableName + "", "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            //{
+            //    if (change >= 0)
+            //    {
+            //        BillDAO.Instance.CheckOut(idBill, IdTable, TotalPrice);
+            //        fmChangeMoney fm = new fmChangeMoney(idBill, change);
+            //        fm.ShowDialog();
+            //        this.Dispose();
+                    
+            //    }
+            //}
         }
     }
 }
