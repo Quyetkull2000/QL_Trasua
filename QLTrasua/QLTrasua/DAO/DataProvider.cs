@@ -20,7 +20,7 @@ namespace QLTrasua.DAO
 
         private DataProvider() { }
 
-        private string connectionSTR = @"Data Source=LAPTOP-P5RVNRIM;Initial Catalog=QLTraSua;Integrated Security=True";
+        private string connectionSTR = @"Data Source=DESKTOP-DHFMQ88\MSSQLSERVER03;Integrated Security=SSPI;Initial Catalog=QLTraSua";
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {

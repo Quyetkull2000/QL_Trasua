@@ -230,19 +230,32 @@ namespace QLTrasua
             //}
             //catch (Exception) { }
 
-            if (idBill != -1)
+            if (idBill != -1) //Bill chưa tồn tại
             {
+                double totalPrice = Convert.ToDouble(txbTotalPrice.Text.Split(',')[0]);
                 if (MessageBox.Show("Bạn có chắc thanh toán cho " + table.Name + "", "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
                 {
                     
                     {
-                        BillDAO.Instance.CheckOut(idBill);
+                        BillDAO.Instance.CheckOut(idBill, (float)totalPrice);
                         ShowBill(table.ID);
 
                         LoadTable();
                     }
                 }
             }
+        }
+
+        private void danhThuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fmListBill Doanhthu = new fmListBill();
+            Doanhthu.ShowDialog();
+        }
+
+        private void thựcĐơnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fmMenuFood Doanhthu = new fmMenuFood();
+            Doanhthu.ShowDialog();
         }
     }
 }

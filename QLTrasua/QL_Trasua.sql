@@ -224,7 +224,9 @@ SELECT ID, Name AS Tên FROM FoodCategory
 delete BillInfo
 delete Bill
 
-CREATE TRIGGER UTG_UpdateBillInfo
+go
+
+CREATE TRIGGER UpdateBillInfo
 On BillInfo for insert, update
 as
 begin
@@ -237,7 +239,7 @@ begin
 End
 go
 
-Create TRIGGER UTG_UpdateBill
+Create TRIGGER UpdateBill
 On Bill for update
 as
 begin
@@ -251,4 +253,23 @@ begin
 	if (@count = 0)
 		update TableFood set status = N'Trống' where id = @idTable
 end 
-go
+
+Go
+
+--Thêm trường totalPrice vào bảng Bill
+Alter table Bill 
+	ADD totalPrice float
+
+Go
+
+
+--Lấy ra danh sách hóa đơn theo ngày người dùng nhập vào
+Create Proc sp_GetListTable  @DateCheckIn date, @DateCheckOut date
+As
+Begin 
+	Select TableFood.name as 'Tên bàn', Bill.totalPrice as 'Tổng tiền', DateCheckIn as 'Ngày vào', DateCheckOut as 'Ngày ra'
+	from Bill, TableFood
+	Where DateCheckIn= @DateCheckIn and DateCheckOut= @DateCheckOut and Bill.status=1 and TableFood.id= Bill.idTable
+End
+
+Go

@@ -33,21 +33,10 @@ namespace QLTrasua.DAO
             return -1;
         }
 
-        public void CheckOut(int id)
+        public void CheckOut(int id, float totalPrice)
         {
-            String query = "Update Bill set status = 1 where id = " + id;
+            String query = "Update Bill set status = 1 , dateCheckOut= GETDATE() , totalPrice= " + totalPrice + " where id = " + id;
             DataProvider.Instance.ExecuteNonQuery(query);
-
-
-
-            //string qr = string.Format("" +
-            //    "UPDATE Bill " +
-            //    "SET dateCheckOut = GETDATE(), status = 1, totalPrice = {0} " +
-            //    "WHERE id = {1}", totalPrice, idBill);
-            //string qr2 = "UPDATE TableFood SET status = N'Trống' WHERE id = " + idTable;
-            //DataProvider.Instance.ExecuteNonQuery(qr);
-            //DataProvider.Instance.ExecuteNonQuery(qr2);
-
         }
 
         public void InsertBill(int id)
@@ -59,12 +48,11 @@ namespace QLTrasua.DAO
 
         public DataTable GetBillListByDate(DateTime checkIn, DateTime checkOut)
         {
-            string qr = "SET DATEFORMAT dmy " +
-                "SELECT b.id AS [Số hóa đơn], b.DateCheckIn AS [Giờ vào], b.DateCheckOut AS [Giờ ra], t.Name AS [Bàn], b.totalPrice AS [Tổng tiền], a.DisplayName as [Thu ngân] " +
-                "FROM Bill AS b, TableFood t, Account a " +
-                "WHERE DateCheckIn >= '" + checkIn.ToShortDateString() + " 00:00:01' AND DateCheckOut <= '" + checkOut.ToShortDateString() + " 23:59:59' AND b.idTable = t.ID AND b.status = 1 AND b.Cashier = a.UserName ";
-            return DataProvider.Instance.ExecuteQuery(qr);
+
+            return DataProvider.Instance.ExecuteQuery("exec sp_GetListTable  @DateCheckIn , @DateCheckOut ", new object[] { checkIn, checkOut });
         }
+
+
 
         public int GetNumBillListByDate(DateTime checkIn, DateTime checkOut)
         {
@@ -120,9 +108,5 @@ namespace QLTrasua.DAO
             return DataProvider.Instance.ExecuteScalar(qr).ToString();
         }
 
-        //internal void CheckOut(int idBill)
-        //{
-        //    throw new NotImplementedException();
-        //}
     }
 }
