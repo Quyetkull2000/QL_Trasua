@@ -1,0 +1,15 @@
+C:\Users\oOOo\Documents\QLTrasua\QLTrasua\obj\Debug\QLTrasua.csprojAssemblyReference.cache
+C:\Users\oOOo\Documents\QLTrasua\QLTrasua\obj\Debug\QLTrasua.fmAccount.resources
+C:\Users\oOOo\Documents\QLTrasua\QLTrasua\obj\Debug\QLTrasua.fmCash.resources
+C:\Users\oOOo\Documents\QLTrasua\QLTrasua\obj\Debug\QLTrasua.fmLogin.resources
+C:\Users\oOOo\Documents\QLTrasua\QLTrasua\obj\Debug\QLTrasua.fmMain.resources
+C:\Users\oOOo\Documents\QLTrasua\QLTrasua\obj\Debug\QLTrasua.fmManagement.resources
+C:\Users\oOOo\Documents\QLTrasua\QLTrasua\obj\Debug\QLTrasua.Properties.Resources.resources
+C:\Users\oOOo\Documents\QLTrasua\QLTrasua\obj\Debug\QLTrasua.csproj.GenerateResource.cache
+C:\Users\oOOo\Documents\QLTrasua\QLTrasua\obj\Debug\QLTrasua.csproj.CoreCompileInputs.cache
+C:\Users\oOOo\Documents\QLTrasua\QLTrasua\bin\Debug\QLTrasua.exe.config
+C:\Users\oOOo\Documents\QLTrasua\QLTrasua\bin\Debug\QLTrasua.exe
+C:\Users\oOOo\Documents\QLTrasua\QLTrasua\bin\Debug\QLTrasua.pdb
+C:\Users\oOOo\Documents\QLTrasua\QLTrasua\obj\Debug\QLTrasua.exe
+C:\Users\oOOo\Documents\QLTrasua\QLTrasua\obj\Debug\QLTrasua.pdb
+C:\Users\oOOo\Documents\QLTrasua\QLTrasua\obj\Debug\QLTrasua.fmChangeMoney.resources
