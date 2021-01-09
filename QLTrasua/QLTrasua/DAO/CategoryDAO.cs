@@ -77,5 +77,6 @@ namespace QLTrasua.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(qr);
             return result > 0;
         }
+       
     }
 }
